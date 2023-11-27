@@ -15,6 +15,7 @@ namespace ImageProcessingTake2
     {
         Bitmap loadImage, resultImage, bgImage;
         int xSize, ySize;
+        private Device webcamDevice;
         public Form1()
         {
             InitializeComponent();
@@ -151,6 +152,21 @@ namespace ImageProcessingTake2
                         resultImage.SetPixel(x, y, backPixel);
                 }
             pictureBox2.Image = resultImage;
+        }
+
+        private void cameraBtn_Click(object sender, EventArgs e)
+        {
+            Device[] devices = DeviceManager.GetAllDevices();
+
+            if(devices.Length > 0)
+            {
+                webcamDevice = devices[0];
+                webcamDevice.ShowWindow(pictureBox1);
+            }
+            else
+            {
+                MessageBox.Show("No webcam devices found.");
+            }
         }
 
         private void openFileDialog2_FileOk(object sender, CancelEventArgs e)

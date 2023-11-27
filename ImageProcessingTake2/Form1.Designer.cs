@@ -43,6 +43,7 @@
             this.loadBGBtn = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.subtractBtn = new System.Windows.Forms.Button();
+            this.cameraBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -179,11 +180,22 @@
             this.subtractBtn.UseVisualStyleBackColor = true;
             this.subtractBtn.Click += new System.EventHandler(this.subtractBtn_Click);
             // 
+            // cameraBtn
+            // 
+            this.cameraBtn.Location = new System.Drawing.Point(81, 376);
+            this.cameraBtn.Name = "cameraBtn";
+            this.cameraBtn.Size = new System.Drawing.Size(63, 23);
+            this.cameraBtn.TabIndex = 12;
+            this.cameraBtn.Text = "Camera";
+            this.cameraBtn.UseVisualStyleBackColor = true;
+            this.cameraBtn.Click += new System.EventHandler(this.cameraBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 622);
+            this.ClientSize = new System.Drawing.Size(624, 622);
+            this.Controls.Add(this.cameraBtn);
             this.Controls.Add(this.subtractBtn);
             this.Controls.Add(this.loadBGBtn);
             this.Controls.Add(this.pictureBox3);
@@ -222,6 +234,7 @@
         private System.Windows.Forms.Button loadBGBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button subtractBtn;
+        private System.Windows.Forms.Button cameraBtn;
     }
 }
 
