@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace ImageProcessingTake2
 {
@@ -167,6 +168,25 @@ namespace ImageProcessingTake2
             {
                 MessageBox.Show("No webcam devices found.");
             }
+        }
+
+        private void copyCamBtn_Click(object sender, EventArgs e)
+        {
+            copyTimer.Start();
+        }
+        public Bitmap getImageData()
+        {
+            IDataObject data;
+            Image bmap;
+            webcamDevice.Sendmessage();
+            data = Clipboard.GetDataObject();
+            bmap = (Image)(data.GetData("System.Drawing.Bitmap", true));
+            Bitmap b = new Bitmap(bmap);
+            return b;
+        }
+        private void copyTimer_Tick(object sender, EventArgs e)
+        {
+            pictureBox2.Image = getImageData();
         }
 
         private void openFileDialog2_FileOk(object sender, CancelEventArgs e)

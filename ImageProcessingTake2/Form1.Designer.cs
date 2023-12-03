@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loadBtn = new System.Windows.Forms.Button();
@@ -44,6 +45,8 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.subtractBtn = new System.Windows.Forms.Button();
             this.cameraBtn = new System.Windows.Forms.Button();
+            this.copyCamBtn = new System.Windows.Forms.Button();
+            this.copyTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -182,7 +185,7 @@
             // 
             // cameraBtn
             // 
-            this.cameraBtn.Location = new System.Drawing.Point(81, 376);
+            this.cameraBtn.Location = new System.Drawing.Point(12, 411);
             this.cameraBtn.Name = "cameraBtn";
             this.cameraBtn.Size = new System.Drawing.Size(63, 23);
             this.cameraBtn.TabIndex = 12;
@@ -190,11 +193,26 @@
             this.cameraBtn.UseVisualStyleBackColor = true;
             this.cameraBtn.Click += new System.EventHandler(this.cameraBtn_Click);
             // 
+            // copyCamBtn
+            // 
+            this.copyCamBtn.Location = new System.Drawing.Point(81, 411);
+            this.copyCamBtn.Name = "copyCamBtn";
+            this.copyCamBtn.Size = new System.Drawing.Size(63, 23);
+            this.copyCamBtn.TabIndex = 13;
+            this.copyCamBtn.Text = "Copy";
+            this.copyCamBtn.UseVisualStyleBackColor = true;
+            this.copyCamBtn.Click += new System.EventHandler(this.copyCamBtn_Click);
+            // 
+            // copyTimer
+            // 
+            this.copyTimer.Tick += new System.EventHandler(this.copyTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 622);
+            this.Controls.Add(this.copyCamBtn);
             this.Controls.Add(this.cameraBtn);
             this.Controls.Add(this.subtractBtn);
             this.Controls.Add(this.loadBGBtn);
@@ -235,6 +253,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button subtractBtn;
         private System.Windows.Forms.Button cameraBtn;
+        private System.Windows.Forms.Button copyCamBtn;
+        private System.Windows.Forms.Timer copyTimer;
     }
 }
 
